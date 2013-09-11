@@ -3,8 +3,12 @@ class Ant
 
 	def initialize(world)
 		@world = world
-		@x = @y = world.size / 2
+		center_in_world
 		@direction = [1,0]
+	end
+
+	def center_in_world
+		@x = @y = @world.size / 2
 	end
 
 	def position
@@ -27,7 +31,6 @@ class Ant
 
 		update_position
 		enforce_wrapping_bounds
-
 	end
 
 	def turn_right
